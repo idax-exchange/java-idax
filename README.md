@@ -3,8 +3,8 @@
 idax-java-api is a lightweight Java library for interacting with the [IDAX API](https://www.idax.global/#/exchangepro?pairname=ETH_BTC), providing complete API coverage, and supporting synchronous and asynchronous requests, as well as event streaming using WebSockets.
 
 ## Features
-* Support for synchronous and asynchronous REST requests to all [General](https://www.idax.com/restapipub.html#user-content-general-endpoints), [Market Data](https://www.idax.com/restapipub.html#user-content-market-data-endpoints), [Account](https://www.idax.com/restapipub.html#user-content-account-endpoints) endpoints, and [User](https://www.idax.com/restapipub.html#user-content-user-data-stream-endpoints) stream endpoints.
-* Support for User Data, Trade, Kline, and Depth event streaming using [IDAX WebSocket API](https://www.idax.com/restapipub.html#wss-endpoint).
+* Support for synchronous and asynchronous REST requests to all [General](https://github.com/idax-exchange/java-idax/blob/master/README.md#getting-started), [Market Data](https://github.com/idax-exchange/java-idax/blob/master/README.md#market-data-endpoints), [Account](https://github.com/idax-exchange/java-idax/blob/master/README.md#get-user-info-of-link-userinforequest) endpoints, and [User](https://github.com/idax-exchange/java-idax/blob/master/README.md#get-user-info-of-link-userinforequest) stream endpoints.
+* Support for User Data, Trade, Kline, and Depth event streaming using [IDAX WebSocket API](https://github.com/idax-exchange/java-idax/blob/master/README.md#websocket-api).
 
 ## Installation
 1. Install library into your Maven's local repository by running `mvn install`
@@ -17,7 +17,7 @@ idax-java-api is a lightweight Java library for interacting with the [IDAX API](
 </dependency>
 ```
 
-Alternatively, you can clone this repository and run the [examples](https://github.com/joaopsilva/idax-java-api/tree/master/src/test/java/com/idax/api/examples).
+Alternatively, you can clone this repository and run the [examples](https://github.com/idax-exchange/java-idax/archive/master.zip).
 
 ## Examples
 
@@ -25,10 +25,10 @@ Alternatively, you can clone this repository and run the [examples](https://gith
 
 There are three main client classes that can be used to interact with the API:
 
-1. [`idaxApiRestClient`](https://github.com/joaopsilva/idax-java-api/blob/master/src/main/java/com/idax/api/client/idaxApiRestClient.java), a synchronous/blocking [idax API](https://www.idax.com/restapipub.html) client;
-2. [`idaxApiWebSocketClient`](https://github.com/joaopsilva/idax-java-api/blob/master/src/main/java/com/idax/api/client/idaxApiWebSocketClient.java), a data streaming client using [idax WebSocket API](https://www.idax.com/restapipub.html#wss-endpoint).
+1. [`idaxApiRestClient`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/com/idax/api/client/service/IdaxApiRestClient.java), a synchronous/blocking [idax API](https://www.idax.com/restapipub.html) client;
+2. [`idaxApiWebSocketClient`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/com/idax/api/client/service/IdaxApiWebSocketClient.java), a data streaming client using [idax WebSocket API](https://www.idax.com/restapipub.html#wss-endpoint).
 
-These can be instantiated through the corresponding factory method of [`idaxApiClientFactory`](https://github.com/joaopsilva/idax-java-api/blob/master/src/main/java/com/idax/api/client/idaxApiClientFactory.java), by passing the [security parameters](https://www.idax.com/restapipub.html#user-content-endpoint-security-type) `API-KEY` and `SECRET`, which can be created at [https://www.idax.com/userCenter/createApi.html](https://www.idax.com/userCenter/createApi.html).
+These can be instantiated through the corresponding factory method of [`idaxApiClientFactory`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/com/idax/api/client/IdaxApiClientFactory.java), by passing the [security parameters](https://www.idax.com/restapipub.html#user-content-endpoint-security-type) `API-KEY` and `SECRET`, which can be created at [https://www.idax.com/userCenter/createApi.html](https://www.idax.com/userCenter/createApi.html).
 
 ```java
 idaxApiClientFactory factory = idaxApiClientFactory.newInstance("API-KEY", "SECRET");
@@ -61,7 +61,7 @@ System.out.println(serverTime.getTimestamp());
 ```java
 String symbol= "ETH_BTC";
 OrderBook orderBook = idaxApiRestClient.getOrderBook(symbol);
-System.out.println("返回orderBook："+orderBook);
+System.out.println("return orderBook："+orderBook);
 ```
 <details>
  <summary>View Response</summary>
@@ -74,13 +74,13 @@ System.out.println("返回orderBook："+orderBook);
 ```java
 String symbol= "ETH_BTC";
 TickerEntry tickerEntry = idaxApiRestClient.getTickerEntry(symbol);
-System.out.println("返回tickerEntry："+tickerEntry);
+System.out.println("return tickerEntry："+tickerEntry);
 ```
 <details>
  <summary>View Response</summary>
  
  ```java
-返回tickerEntry：
+return tickerEntry：
 TickerEntry{timestamp=1544008209324, code='10000', msg='Successful request processing', 
 ticker=[Ticker(symbol=null, lastPrice=null, bidPrice=null, askPrice=null, 
 open=0.99990000, high=11.00000000, low=0.05011800, last=11.00000000, vol=1094.37100000)]}
@@ -95,13 +95,13 @@ open=0.99990000, high=11.00000000, low=0.05011800, last=11.00000000, vol=1094.37
     kLineRequest.setSize(10);
     kLineRequest.setSince(System.currentTimeMillis());
     KlineEntry klineEntry = idaxApiRestClient.getKlineEntry(kLineRequest);
-    System.out.println("返回tickerEntry："+klineEntry);
+    System.out.println("return tickerEntry："+klineEntry);
 ```
 <details>
  <summary>View Response</summary>
  
  ```java
-返回tickerEntry：
+return tickerEntry：
 KlineEntry{timestamp=null, code='10000', 
 kline=[[1538352000000,"0.04154200","1000000.00000000","0.04153100","0.04153900",
 "95591.02800000"],[1543190400000,"0.05011800","11.00000000","0.05011800","11.00000000","31681.76300000"], 
@@ -113,13 +113,13 @@ kline=[[1538352000000,"0.04154200","1000000.00000000","0.04153100","0.04153900",
 #### Get trade of a symbol.
 ```java
  TradeEntry tradeEntry = idaxApiRestClient.getTradeEntry(symbol);
-    System.out.println("返回tradeEntry："+tradeEntry);
+    System.out.println("return tradeEntry："+tradeEntry);
 ```
 <details>
  <summary>View Response</summary>
  
  ```java
-返回tradeEntry：
+return tradeEntry：
 TradeEntry{code='10000', msg='Successful request processing',
  trades=[ Trade{timestamp=1542969741000, price='11.00000000', 
  id='7467ced9-d8b7-4d3c-8b3e-bdbe8939fa69', quantity='1000.00000000', maker='Buy'},
@@ -131,13 +131,13 @@ TradeEntry{code='10000', msg='Successful request processing',
 #### Get pair .
 ```java
     PairEntry pairEntry = idaxApiRestClient.getPairEntry();
-    System.out.println("返回pairEntry："+pairEntry);
+    System.out.println("return pairEntry："+pairEntry);
 ```
 <details>
  <summary>View Response</summary>
  
  ```java
-返回pairEntry：
+return pairEntry：
 PairEntry{code='10000', msg='Successful request processing', 
 pairs=[ETC_USDT, BTM_ETH, ETC_ETH, COS_ETH, BTS_USDT, TRX_BTC, STORJ_BTC,
 GUPASS_ETH, AE_BTC, LTC_ETH, ABTC_BTC, SW_ETH, LRC_ETH, OMG_BTC, ETC_BTC, BTC_USDT, XRP_BTC,
@@ -149,13 +149,13 @@ GUPASS_ETH, AE_BTC, LTC_ETH, ABTC_BTC, SW_ETH, LRC_ETH, OMG_BTC, ETC_BTC, BTC_US
 #### Get pairlimit of a symbol.
 ```java
 PairLimitEntry pairLimitEntry = idaxApiRestClient.getPairLimitEntry(symbol);
-    System.out.println("返回pairLimitEntry："+pairLimitEntry);
+    System.out.println("return pairLimitEntry："+pairLimitEntry);
 ```
 <details>
  <summary>View Response</summary>
  
  ```java
-返回pairLimitEntry：
+return pairLimitEntry：
 PairLimitEntry{code='10000', msg='Successful request processing', 
 pairRuleVo=[PairRule{pairName='BTS_ETH', maxAmount='100000000.00000000', minAmount='0.00010000', priceDecimalPlace=8, qtyDecimalPlace=0}, PairRule{pairName='SNT_ETH', maxAmount='10000000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='LTC_BTC', maxAmount='1000000.00000000', minAmount='0.00010000', priceDecimalPlace=8, qtyDecimalPlace=0}, PairRule{pairName='SFU_BTC', maxAmount='1000000000000000.0', minAmount='0.001', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='TRX_ETH', maxAmount='100.00000000', minAmount='0.00000000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='AAA_BTC', maxAmount='10000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=2}, PairRule{pairName='BTM_BTC', maxAmount='10000000.00000000', minAmount='0.00100000', priceDecimalPlace=6, qtyDecimalPlace=3}, PairRule{pairName='AE_ETH', maxAmount='100000000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='EOS_BTC', maxAmount='1000000000.00000000', minAmount='0.00000001', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='BTS_BTC', maxAmount='10000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=0}, PairRule{pairName='BCH_USDT', maxAmount='10000000.0', minAmount='0.001', priceDecimalPlace=2, qtyDecimalPlace=3}, PairRule{pairName='LRC_BTC', maxAmount='1000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='SW_BTC', maxAmount='100.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=4}, PairRule{pairName='ZAT_BTC', maxAmount='100.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=5}, PairRule{pairName='SDL_ETH', maxAmount='10000000.00000000', minAmount='100.00000000', priceDecimalPlace=6, qtyDecimalPlace=0}, PairRule{pairName='FTL_ETH', maxAmount='10000000.00000000', minAmount='100.00000000', priceDecimalPlace=8, qtyDecimalPlace=0}, PairRule{pairName='SPD_BTC', maxAmount='10.00000000', minAmount='0.00000000', priceDecimalPlace=0, qtyDecimalPlace=0}, PairRule{pairName='ETC_USDT', maxAmount='1000000.00000000', minAmount='0.00010000', priceDecimalPlace=4, qtyDecimalPlace=2}, PairRule{pairName='BTM_ETH', maxAmount='10000000.00000000', minAmount='0.00100000', priceDecimalPlace=6, qtyDecimalPlace=3}, PairRule{pairName='ETC_ETH', maxAmount='10000000.0', minAmount='0.0001', priceDecimalPlace=8, qtyDecimalPlace=2}, PairRule{pairName='COS_ETH', maxAmount='10000000.00000000', minAmount='100.00000000', priceDecimalPlace=6, qtyDecimalPlace=3}, PairRule{pairName='BTS_USDT', maxAmount='10000000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=0}, PairRule{pairName='TRX_BTC', maxAmount='100.00000000', minAmount='0.00000000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='STORJ_BTC', maxAmount='1000000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='GUPASS_ETH', maxAmount='1000.00000000', minAmount='0.01000000', priceDecimalPlace=8, qtyDecimalPlace=0}, PairRule{pairName='AE_BTC', maxAmount='1000000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='LTC_ETH', maxAmount='1000000.00000000', minAmount='0.00010000', priceDecimalPlace=8, qtyDecimalPlace=0}, PairRule{pairName='ABTC_BTC', maxAmount='1000.00000000', minAmount='0.00000000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='SW_ETH', maxAmount='1000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=4}, PairRule{pairName='LRC_ETH', maxAmount='100000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='OMG_BTC', maxAmount='10000000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=8}, PairRule{pairName='ETC_BTC', maxAmount='1000000.0', minAmount='0.0001', priceDecimalPlace=8, qtyDecimalPlace=2}, PairRule{pairName='BTC_USDT', maxAmount='100000.00000000', minAmount='0.00100000', priceDecimalPlace=2, qtyDecimalPlace=6}, PairRule{pairName='XRP_BTC', maxAmount='10000000.00000000', minAmount='0.00010000', priceDecimalPlace=8, qtyDecimalPlace=0}, PairRule{pairName='LTC_USDT', maxAmount='0.00000000', minAmount='0.00000000', priceDecimalPlace=0, qtyDecimalPlace=0}, PairRule{pairName='ABTC_ETH', maxAmount='1000.00000000', minAmount='0.00000000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='BCH_ETH', maxAmount='10000000.0', minAmount='0.0001', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='EOS_ETH', maxAmount='100000000.00000000', minAmount='0.00100000', priceDecimalPlace=6, qtyDecimalPlace=3}, PairRule{pairName='XRP_USDT', maxAmount='10000000000000.00000000', minAmount='0.00010000', priceDecimalPlace=5, qtyDecimalPlace=0}, 
 PairRule{pairName='SNT_BTC', maxAmount='10000000.00000000', minAmount='0.0000001', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='ETH_USDT', maxAmount='100000.00000000', minAmount='0.00100000', priceDecimalPlace=2, qtyDecimalPlace=5}, PairRule{pairName='STORJ_ETH', maxAmount='100000000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='BCH_BTC', maxAmount='10000000.00000000', minAmount='0.00010000', priceDecimalPlace=6, qtyDecimalPlace=3}, PairRule{pairName='SPD_ETH', maxAmount='100.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=3}, PairRule{pairName='ZAT_ETH', maxAmount='1000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=0}, PairRule{pairName='OMG_ETH', maxAmount='100000000.00000000', minAmount='0.00100000', priceDecimalPlace=8, qtyDecimalPlace=8}, PairRule{pairName='ETH_BTC', maxAmount='1000000000000.00000000', minAmount='0.00100000', priceDecimalPlace=6, qtyDecimalPlace=3}
@@ -166,13 +166,13 @@ PairRule{pairName='SNT_BTC', maxAmount='10000000.00000000', minAmount='0.0000001
 #### Get pairRate of  symbols.
 ```java
     PairRateEntry pairRate = idaxApiRestClient.getPairRate();
-    System.out.println("返回PairRateEntry："+pairRate);
+    System.out.println("return PairRateEntry："+pairRate);
 ```
 <details>
  <summary>View Response</summary>
  
  ```java
-返回PairRateEntry：
+return PairRateEntry：
 PairRateEntry(code=10000, msg=Successful request processing, 
 marketValuationCnies=[PairRate(coinName=BTC, cny=26635.3970061, usd=3882.54114341), 
 PairRate(coinName=ETH, cny=740.69523754, usd=107.968345049), PairRate(coinName=USDT, cny=6.8266493876, usd=0.9950948774)])
