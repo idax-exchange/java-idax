@@ -1,6 +1,6 @@
 # Java IDAX API
 
-idax-java-api is a lightweight Java library for interacting with the [IDAX API](https://www.idax.global/#/exchangepro?pairname=ETH_BTC), providing complete API coverage, and supporting synchronous and asynchronous requests, as well as event streaming using WebSockets.
+idax-java-api is a lightweight Java library for interacting with the [IDAX API](https://github.com/idax-exchange/java-idax/blob/master/README.md#java-idax-api), providing complete API coverage, and supporting synchronous and asynchronous requests, as well as event streaming using WebSockets.
 
 ## Features
 * Support for synchronous and asynchronous REST requests to all [General](https://github.com/idax-exchange/java-idax/blob/master/README.md#getting-started), [Market Data](https://github.com/idax-exchange/java-idax/blob/master/README.md#market-data-endpoints), [Account](https://github.com/idax-exchange/java-idax/blob/master/README.md#get-user-info-of-link-userinforequest) endpoints, and [User](https://github.com/idax-exchange/java-idax/blob/master/README.md#get-user-info-of-link-userinforequest) stream endpoints.
@@ -25,8 +25,8 @@ Alternatively, you can clone this repository and run the [examples](https://gith
 
 There are three main client classes that can be used to interact with the API:
 
-1. [`idaxApiRestClient`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/com/idax/api/client/service/IdaxApiRestClient.java), a synchronous/blocking [idax API](https://www.idax.com/restapipub.html) client;
-2. [`idaxApiWebSocketClient`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/com/idax/api/client/service/IdaxApiWebSocketClient.java), a data streaming client using [idax WebSocket API](https://www.idax.com/restapipub.html#wss-endpoint).
+1. [`idaxApiRestClient`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/com/idax/api/client/service/IdaxApiRestClient.java), a synchronous/blocking [idax API](https://github.com/idax-exchange/java-idax/blob/master/README.md#java-idax-api) client;
+2. [`idaxApiWebSocketClient`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/com/idax/api/client/service/IdaxApiWebSocketClient.java), a data streaming client using [idax WebSocket API](https://github.com/idax-exchange/java-idax/blob/master/README.md#websocket-api).
 
 These can be instantiated through the corresponding factory method of [`idaxApiClientFactory`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/com/idax/api/client/IdaxApiClientFactory.java), by passing the [security parameters](https://www.idax.com/restapipub.html#user-content-endpoint-security-type) `API-KEY` and `SECRET`, which can be created at [https://www.idax.com/userCenter/createApi.html](https://www.idax.com/userCenter/createApi.html).
 
