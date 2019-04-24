@@ -515,7 +515,7 @@ Client provides a way for user to subscribe to multiple channels using same webs
 </details>
 
 ### More examples
-An extensive set of examples, covering most aspects of the API, can be found at https://github.com/joaopsilva/idax-java-api/tree/master/src/test/java/com/idax/api/examples.
+An extensive set of examples, covering most aspects of the API, can be found at https://github.com/idax-exchange/java-idax/tree/master/idax-api-example/src/main/java/com/idax/api/client/example.
 
 
 
