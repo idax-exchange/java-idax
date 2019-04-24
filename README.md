@@ -1,6 +1,6 @@
 # Java IDAX API
 
-idax-java-api is a lightweight Java library for interacting with the [IDAX API](https://www.idax.com/restapipub.html), providing complete API coverage, and supporting synchronous and asynchronous requests, as well as event streaming using WebSockets.
+idax-java-api is a lightweight Java library for interacting with the [IDAX API](https://www.idax.global/#/exchangepro?pairname=ETH_BTC), providing complete API coverage, and supporting synchronous and asynchronous requests, as well as event streaming using WebSockets.
 
 ## Features
 * Support for synchronous and asynchronous REST requests to all [General](https://www.idax.com/restapipub.html#user-content-general-endpoints), [Market Data](https://www.idax.com/restapipub.html#user-content-market-data-endpoints), [Account](https://www.idax.com/restapipub.html#user-content-account-endpoints) endpoints, and [User](https://www.idax.com/restapipub.html#user-content-user-data-stream-endpoints) stream endpoints.
@@ -271,7 +271,7 @@ UserInfoEntry(code=10000, msg=Successful request processing, total={"BTS":"10000
  ```java
 TradeHistoryEntry(code=10000, msg=Successful request processing, trades=[])
 ```
-
+</details>
 
 #### order place in Idax of {@link PlaceOrderRequest}
 
