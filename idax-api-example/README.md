@@ -11,7 +11,7 @@ idax-java-api is a lightweight Java library for interacting with the [IDAX  API]
 2. Add the following Maven dependency to your project's `pom.xml`:
 ```
         <dependency>
-            <groupId>com.idax.api.client</groupId>
+            <groupId>pro.idax.api.client</groupId>
             <artifactId>idax-api-client</artifactId>
             <version>1.0.0</version>
         </dependency>
