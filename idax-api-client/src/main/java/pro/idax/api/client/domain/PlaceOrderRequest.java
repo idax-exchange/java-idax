@@ -9,10 +9,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * @program: PlaceOrderRequest
- * @description: place order request
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/26 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data

@@ -18,10 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * @program: IdaxApiServiceGenerator
- * @description: IdaxApiServiceGenerator
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/5 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public class IdaxApiServiceGenerator {
 
@@ -41,6 +38,9 @@ public class IdaxApiServiceGenerator {
 
     /**
      * Execute a REST call and block until the response is received.
+     * @param call call
+     * @param <T> t
+     * @return T
      */
     public static <T> T executeSync(Call<T> call) {
         try {
@@ -56,6 +56,12 @@ public class IdaxApiServiceGenerator {
         }
     }
 
+    /**
+     * execute
+     *
+     * @param url url
+     * @return String
+     */
     public static String execute(String url) {
         Request request = new Request.Builder()
                 .url(url)
@@ -77,13 +83,20 @@ public class IdaxApiServiceGenerator {
 
     /**
      * Extracts and converts the response error body into an object.
+     *
+     * @param response response
+     * @return IdaxApiError
+     * @throws Exception        Exception
+     * @throws IdaxApiException IdaxApiException
      */
-    public static IdaxApiError getIdaxApiError(Response<?> response) throws IOException, IdaxApiException {
+    private static IdaxApiError getIdaxApiError(Response<?> response) throws IOException, IdaxApiException {
         return errorBodyConverter.convert(response.errorBody());
     }
 
     /**
      * Returns the shared OkHttpClient instance.
+     *
+     * @return OkHttpClient
      */
     public static OkHttpClient getSharedClient() {
         return sharedClient;

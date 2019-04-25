@@ -4,10 +4,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 /**
- * @program: HttpClientPool
- * @description: HttpClientPool
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public class HttpClientPool {
 

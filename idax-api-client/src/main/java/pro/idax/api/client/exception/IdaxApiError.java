@@ -6,10 +6,8 @@ import pro.idax.api.client.constant.IdaxApiConstants;
 import pro.idax.api.client.enums.IdaxCodeEnum;
 
 /**
- * @program: IdaxApiError
- * @description: Idax API error object.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/26 17:28
+ * IdaxApiError
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IdaxApiError {
@@ -26,6 +24,7 @@ public class IdaxApiError {
 
   public IdaxApiError() {
   }
+
   public IdaxApiError(IdaxCodeEnum idaxCodeEnum){
     this.code = idaxCodeEnum.getCode();
     this.msg = idaxCodeEnum.getDesc();

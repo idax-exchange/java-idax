@@ -1,17 +1,13 @@
 package pro.idax.api.client.entry;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.io.Serializable;
 
 
 /**
- * @program: Ticker
- * @description: 24 hour price change statistics for a ticker.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/26 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data

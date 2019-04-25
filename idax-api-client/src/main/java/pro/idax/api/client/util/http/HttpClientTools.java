@@ -17,10 +17,7 @@ import java.io.InputStreamReader;
 import java.util.Map;
 
 /**
- * @program: HttpClientTools
- * @description: HttpClientTools
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public class HttpClientTools {
 
@@ -28,11 +25,11 @@ public class HttpClientTools {
     /**
      * doPost
      * Handling body post requests in JSON format
-     * @param url
-     * @param jsonObj
+     * @param url url
+     * @param jsonObj jsonObj
      * @return String
-     * @throws ClientProtocolException
-     * @throws Exception
+     * @throws ClientProtocolException ClientProtocolException
+     * @throws Exception Exception
      */
     public static String doPost(String url, String jsonObj) throws ClientProtocolException, Exception {
 
@@ -60,10 +57,10 @@ public class HttpClientTools {
     /**
      * doGet
      * Handling HTTP get requests
-     * @param url
+     * @param url url
      * @return String
-     * @throws ClientProtocolException
-     * @throws Exception
+     * @throws ClientProtocolException ClientProtocolException
+     * @throws Exception Exception
      */
     public static String doGet(String url) throws ClientProtocolException, Exception {
 
@@ -87,11 +84,11 @@ public class HttpClientTools {
     /**
      *doGet
      * Handling HTTP get requests
-     * @param url
-     * @param paramsMap
+     * @param url url
+     * @param paramsMap paramsMap
      * @return String
-     * @throws ClientProtocolException
-     * @throws Exception
+     * @throws ClientProtocolException ClientProtocolException
+     * @throws Exception Exception
      */
     public static String doGet(String url, Map paramsMap) throws ClientProtocolException, Exception {
 
@@ -114,8 +111,8 @@ public class HttpClientTools {
 
     /**setGetParams
      * Get request, only key-value pair parameters
-     * @param url
-     * @param paramsMap
+     * @param url url
+     * @param paramsMap paramsMap
      * @return String
      */
     public static String  setGetParams(String url, Map paramsMap) {
@@ -132,7 +129,7 @@ public class HttpClientTools {
 
     /**
      * convertStreamToString
-     * @param is
+     * @param is is
      * @return String
      */
     private static String convertStreamToString(InputStream is) {

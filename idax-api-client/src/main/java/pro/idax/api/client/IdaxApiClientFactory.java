@@ -8,10 +8,7 @@ import pro.idax.api.client.service.impl.IdaxApiServiceGenerator;
 import pro.idax.api.client.service.impl.IdaxApiWebSocketClientImpl;
 
 /**
- * @program: IdaxApiClientFactory
- * @description: A factory for creating IdaxApi client objects.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public class IdaxApiClientFactory {
 
@@ -37,9 +34,9 @@ public class IdaxApiClientFactory {
 
     /**
      * Instantiates a new Idax api client factory.
-     *
-     * @param apiKey the API key
-     * @param secret the Secret
+     * @param apiKey apiKey
+     * @param secret secret
+     * @param apiBaseUrl apiBaseUrl
      */
     private IdaxApiClientFactory(String apiKey, String secret, String apiBaseUrl) {
         this.apiKey = apiKey;
@@ -48,11 +45,11 @@ public class IdaxApiClientFactory {
     }
 
     /**
-     * New instance.
-     *
-     * @param apiKey the API key
-     * @param secret the Secret
-     * @return the Idax api client factory
+     * New instance
+     * @param apiKey apiKey
+     * @param secret secret
+     * @param apiBaseUrl apiBaseUrl
+     * @return IdaxApiClientFactory
      */
     public static IdaxApiClientFactory newInstance(String apiKey, String secret, String apiBaseUrl) {
 
@@ -87,6 +84,7 @@ public class IdaxApiClientFactory {
 
     /**
      * Creates a new synchronous/blocking REST client.
+     * @return IdaxApiRestClient
      */
     public IdaxApiRestClient newRestClient() {
 
@@ -96,7 +94,7 @@ public class IdaxApiClientFactory {
     /**
      * newWebSocketClient
      *
-     * @return
+     * @return IdaxApiWebSocketClient
      */
     public IdaxApiWebSocketClient newWebSocketClient() {
 

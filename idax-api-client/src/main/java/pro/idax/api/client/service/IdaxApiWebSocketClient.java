@@ -2,20 +2,13 @@ package pro.idax.api.client.service;
 
 import pro.idax.api.client.enums.PeriodEnum;
 import pro.idax.api.client.event.*;
-import pro.idax.api.client.event.BatchRegisterEventEntry;
-import pro.idax.api.client.event.KlineEventEntry;
-import pro.idax.api.client.event.TickerEventEntry;
-import pro.idax.api.client.event.TradeEventEntry;
 
 import java.io.Closeable;
 import java.util.Map;
 
 
 /**
- * @program: IdaxApiWebSocketClient
- * @description: Idax API data streaming facade, supporting streaming of events through web sockets.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/4 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public interface IdaxApiWebSocketClient extends Closeable {
 
@@ -67,21 +60,22 @@ public interface IdaxApiWebSocketClient extends Closeable {
     Closeable onTradeEvent(String symbols, IdaxApiCallback<TradeEventEntry> callback);
 
     /**
-     * Open a new web socket to receive {@link TradeEventEntry tradeEventEntry} on a callback.
+     * Open a new web socket to receive {@link MyTradeEntry myTradeEntry} on a callback.
      *
-     * @param callback the callback to call on new events
+     * @param param    param
+     * @param callback callback
      * @return a {@link Closeable} that allows the underlying web socket to be closed.
      */
     Closeable onMyTradeEvent(Map<String, Object> param, IdaxApiCallback<MyTradeEntry> callback);
 
     /**
-     * Open a new web socket to receive {@link BatchRegisterEventEntry batchRegisterEventEntry} on a callback.
+     * Open a new web socket to receive {@link MyOrderEntry myOrderEntry} on a callback.
      *
-     * @param callback the callback to call on new events
+     * @param param    param
+     * @param callback callback
      * @return a {@link Closeable} that allows the underlying web socket to be closed.
      */
     Closeable onMyOrderEvent(Map<String, Object> param, IdaxApiCallback<MyOrderEntry> callback);
-
 
 
 }

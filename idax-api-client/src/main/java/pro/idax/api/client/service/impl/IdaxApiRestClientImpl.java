@@ -15,10 +15,7 @@ import pro.idax.api.client.util.http.HttpRest;
 import java.util.Map;
 
 /**
- * @program: IdaxApiRestClientImpl
- * @description: Implementation of Idax's REST API using Retrofit with synchronous/blocking method calls.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @Slf4j
 public class IdaxApiRestClientImpl implements IdaxApiRestClient {
@@ -29,9 +26,9 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
 
     /**
      * IdaxApiRestClientImpl
-     *
-     * @param apiKey
-     * @param secret
+     * @param apiKey apiKey
+     * @param secret secret
+     * @param apiBaseUrl apiBaseUrl
      */
     public IdaxApiRestClientImpl(String apiKey, String secret, String apiBaseUrl) {
         this.apiKey = apiKey;
@@ -71,7 +68,7 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
     /**
      * getKlineEntry
      *
-     * @param kLineReuest
+     * @param kLineReuest kLineReuest
      * @return KlineEntry
      */
     @Override
@@ -122,28 +119,10 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
         return new HttpRest<PairLimitEntry>().get(url, PairLimitEntry.class);
     }
 
-
-    /**
-     * getOrderList
-     *
-     * @param orderListRequest
-     * @return OrderListEntry
-     */
-//    @Override
-//    public OrderListEntry getOrderList(OrderListRequest orderListRequest) {
-//
-//        CheckParamValidUtil.checkParamValidGetOrderList(orderListRequest);
-//        Map<String, Object> map = BeanUtil.transBean2Map(orderListRequest);
-//        String sign = getSign(map);
-//        orderListRequest.setSign(sign);
-//
-//        return new HttpRest<OrderListEntry>().post(apiBaseUrl + URL_ORDER_LIST, orderListRequest, OrderListEntry.class);
-//    }
-
     /**
      * getOrderInfo
      *
-     * @param orderInfoRequest
+     * @param orderInfoRequest orderInfoRequest
      * @return OrderInfoEntry
      */
     @Override
@@ -160,7 +139,7 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
     /**
      * getOrderHistory
      *
-     * @param orderHistoryRequest
+     * @param orderHistoryRequest orderHistoryRequest
      * @return OrderHistoryEntry
      */
     @Override
@@ -177,7 +156,7 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
     /**
      * getUserInfo
      *
-     * @param userInfoRequest
+     * @param userInfoRequest userInfoRequest
      * @return UserInfoEntry
      */
     @Override
@@ -192,26 +171,9 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
     }
 
     /**
-     * getTradeHistory
-     *
-     * @param tradeHistoryRequest
-     * @return TradeHistoryEntry
-     */
-//    @Override
-//    public TradeHistoryEntry getTradeHistory(TradeHistoryRequest tradeHistoryRequest) {
-//
-//        CheckParamValidUtil.checkParamValidGetTradeHistory(tradeHistoryRequest);
-//        Map<String, Object> map = BeanUtil.transBean2Map(tradeHistoryRequest);
-//        String sign = getSign(map);
-//        tradeHistoryRequest.setSign(sign);
-//
-//        return new HttpRest<TradeHistoryEntry>().post(apiBaseUrl + URL_TRADE_HISTORY, tradeHistoryRequest, TradeHistoryEntry.class);
-//    }
-
-    /**
      * getMyTrades
      *
-     * @param myTradesRequest
+     * @param myTradesRequest myTradesRequest
      * @return MyTradesEntry
      */
     @Override
@@ -227,7 +189,7 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
     /**
      * placeOrder
      *
-     * @param placeOrderRequest
+     * @param placeOrderRequest placeOrderRequest
      * @return PlaceOrderEntry
      */
     @Override
@@ -244,7 +206,7 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
     /**
      * cancelOrder
      *
-     * @param cancelOrderRequest
+     * @param cancelOrderRequest cancelOrderRequest
      * @return CancelOrderEntry
      */
     @Override
@@ -261,7 +223,7 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
     /**
      * getSign
      *
-     * @param map
+     * @param map map
      * @return String
      */
     private String getSign(Map<String, Object> map) {
@@ -270,9 +232,7 @@ public class IdaxApiRestClientImpl implements IdaxApiRestClient {
         /**sort**/
         String param = ObjectUtils.sortMap(map);
         /**sign***/
-        String sign = SignUtils.hmacSha256(param, secret);
-
-        return sign;
+        return SignUtils.hmacSha256(param, secret);
     }
 
 }

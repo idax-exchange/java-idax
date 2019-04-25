@@ -6,6 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
+ * @author : zhuWei (ynzhuwei888@126.com)
  * Trade all delta event .
  */
 @JsonIgnoreProperties(ignoreUnknown = true)

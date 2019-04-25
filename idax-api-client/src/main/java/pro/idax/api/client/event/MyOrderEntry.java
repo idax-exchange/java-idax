@@ -7,10 +7,7 @@ import pro.idax.api.client.entry.BaseEntry;
 import java.util.List;
 
 /**
- * @program: MyOrderEntry
- * @description: MyOrderEntry
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/4 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data

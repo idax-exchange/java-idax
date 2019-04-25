@@ -5,12 +5,8 @@ import lombok.Data;
 
 import java.util.List;
 
-
 /**
- * @program: TradeHistoryEntry
- * @description: Trade History Entry
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/26 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data

@@ -6,10 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @program: OrderHistoryRequest
- * @description: OrderHistoryRequest
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/26 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
@@ -28,7 +25,7 @@ public class OrderHistoryRequest implements Serializable {
      */
     private String pair;
     /**
-     * order status -1:all, 0：unfinish, 1：finish。
+     * order status -1:all, 0：unfinish, 1：finish
      * required
      */
     private Integer orderState;

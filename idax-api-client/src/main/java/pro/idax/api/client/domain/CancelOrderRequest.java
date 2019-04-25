@@ -7,10 +7,7 @@ import java.io.Serializable;
 
 
 /**
- * @program: CancelOrderRequest
- * @description: cancel order request
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/26 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
@@ -23,7 +20,7 @@ public class CancelOrderRequest implements Serializable {
      */
     private String key;
     /**
-     * order no ,seperate in ,
+     * order no ,seperate in
      */
     private String orderId;
     /**

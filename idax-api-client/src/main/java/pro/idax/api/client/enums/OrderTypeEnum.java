@@ -1,10 +1,7 @@
 package pro.idax.api.client.enums;
 
 /**
- * @program: OrderTypeEnum
- * @description: OrderTypeEnum
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/01 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public enum OrderTypeEnum {
     /**

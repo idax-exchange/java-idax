@@ -7,17 +7,14 @@ import java.util.TreeMap;
 
 
 /**
- * @program: ObjectUtils
- * @description: ObjectUtils
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public class ObjectUtils {
 
     /**
      * sortMap
      *
-     * @param paramMap
+     * @param paramMap paramMap
      * @return String
      */
     public static String sortMap(Map<String, Object> paramMap) {

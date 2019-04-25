@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 /**
+ * @author : zhuWei (ynzhuwei888@126.com)
  * Ticker delta event for a symbol.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)

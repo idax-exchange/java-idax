@@ -11,19 +11,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @program: BeanUtil
- * @description: BeanUtil
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @Slf4j
 public class BeanUtil {
 
 
     /**
-     * Bean --> Map 1: Introspector和PropertyDescriptor Bean --> Map
+     * transBean2Map
      *
-     * @param obj
+     * @param obj obj
      * @return Map
      */
     public static Map<String, Object> transBean2Map(Object obj) {
@@ -55,7 +52,7 @@ public class BeanUtil {
     /**
      * transBean2MapString
      *
-     * @param obj
+     * @param obj obj
      * @return Map
      */
     public static Map<String, String> transBean2MapString(Object obj) {
@@ -63,7 +60,7 @@ public class BeanUtil {
         if (obj == null) {
             return null;
         }
-        Map<String, String> map = new HashMap<String, String>(1000);
+        Map<String, String> map = new HashMap<>(1000);
         try {
             BeanInfo beanInfo = Introspector.getBeanInfo(obj.getClass());
             PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();

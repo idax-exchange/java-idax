@@ -2,7 +2,6 @@ package pro.idax.api.client.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -17,49 +16,41 @@ import pro.idax.api.client.util.ObjectUtils;
 import pro.idax.api.client.util.SignUtils;
 
 import java.io.Closeable;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 /**
- * @program: IdaxApiWebSocketListener
- * @description: Idax API WebSocket client implementation using OkHttp.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/4 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @Slf4j
 public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Closeable {
 
+    public static volatile WebSocket webSocket;
     /**
      * client
      */
     private final OkHttpClient client;
-
     /**
      * API Key
      */
     private String apiKey;
-
     /**
      * Secret
      */
     private String secret;
-
     /**
      * api Base Url
      */
     private String apiBaseUrl;
 
-    public static volatile WebSocket webSocket;
-
 
     /**
      * IdaxApiWebSocketClientImpl
      *
-     * @param client
-     * @param apiKey
-     * @param secret
-     * @param apiBaseUrl
+     * @param client     client
+     * @param apiKey     apiKey
+     * @param secret     secret
+     * @param apiBaseUrl apiBaseUrl
      */
     public IdaxApiWebSocketClientImpl(OkHttpClient client, String apiKey, String secret, String apiBaseUrl) {
         this.client = client;
@@ -71,7 +62,7 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     /**
      * onDepthXEvent
      *
-     * @param symbol
+     * @param symbol   symbol
      * @param callback the callback to call on new events
      * @return Closeable
      */
@@ -90,8 +81,8 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     /**
      * onDepthXYEvent
      *
-     * @param symbol
-     * @param num
+     * @param symbol   symbol
+     * @param num      num
      * @param callback the callback to call on new events
      * @return Closeable
      */
@@ -108,7 +99,7 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     /**
      * onTickerEvent
      *
-     * @param symbol
+     * @param symbol   symbol
      * @param callback the callback to call on new events
      * @return Closeable
      */
@@ -143,7 +134,7 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     /**
      * onTradeEvent
      *
-     * @param symbol
+     * @param symbol   symbol
      * @param callback the callback to call on new events
      * @return Closeable
      */
@@ -160,7 +151,7 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     /**
      * onMyTradeEvent
      *
-     * @param param
+     * @param param    param
      * @param callback the callback to call on new events
      * @return Closeable
      */
@@ -177,7 +168,7 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     /**
      * onMyOrderEvent
      *
-     * @param param
+     * @param param    param
      * @param callback the callback to call on new events
      * @return Closeable
      */
@@ -196,9 +187,9 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     /**
      * createNewWebSocket
      *
-     * @param channel
-     * @param sendMessage
-     * @param listener
+     * @param channel     channel
+     * @param sendMessage sendMessage
+     * @param listener    listener
      * @return Closeable
      */
     private Closeable createNewWebSocket(String channel, SendMessage sendMessage, IdaxApiWebSocketListener<?> listener) {
@@ -221,8 +212,8 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     /**
      * createNewWebSocket
      *
-     * @param sendMessages
-     * @param listener
+     * @param sendMessages sendMessages
+     * @param listener     listener
      * @return Closeable
      */
     private Closeable createNewWebSocket(List<SendMessage> sendMessages, IdaxApiWebSocketListener<?> listener) {
@@ -242,14 +233,14 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
 
     }
 
     /**
      * getMessage
      *
-     * @param sendMessage
+     * @param sendMessage sendMessage
      * @return String
      */
     private String getMessage(SendMessage sendMessage) {
@@ -269,8 +260,8 @@ public class IdaxApiWebSocketClientImpl implements IdaxApiWebSocketClient, Close
     /**
      * getWebSocketInstance
      *
-     * @param request
-     * @param listener
+     * @param request  request
+     * @param listener listener
      * @return WebSocket
      */
     public WebSocket getWebSocketInstance(Request request, IdaxApiWebSocketListener<?> listener) {

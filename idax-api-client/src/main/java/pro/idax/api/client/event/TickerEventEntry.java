@@ -6,6 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
+ * @author : zhuWei (ynzhuwei888@126.com)
  * Ticker delta event for a symbol.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)

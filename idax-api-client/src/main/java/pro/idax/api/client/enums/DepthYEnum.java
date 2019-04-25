@@ -1,19 +1,25 @@
 package pro.idax.api.client.enums;
 
 /**
- * @program: DepthYEnum
- * @description: DepthYEnum
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/04 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public enum DepthYEnum {
 
     /**
-     * FIVE
+     * 5
      */
     FIVE(5,"5"),
+    /**
+     * 10
+     */
     TEN(10,"10"),
+    /**
+     * 20
+     */
     TWENTY(20,"20"),
+    /**
+     * 50
+     */
     FIFTY(50,"50");
 
     /**
@@ -27,8 +33,8 @@ public enum DepthYEnum {
 
     /**
      * DepthYEnum
-     * @param code
-     * @param desc
+     * @param code code
+     * @param desc desc
      */
     DepthYEnum(Integer code, String desc) {
         this.code = code;

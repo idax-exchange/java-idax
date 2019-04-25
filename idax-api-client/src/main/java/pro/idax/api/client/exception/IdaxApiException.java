@@ -2,10 +2,8 @@ package pro.idax.api.client.exception;
 
 
 /**
- * @program: IdaxApiException
- * @description: An exception which can occur while invoking methods of the Idax API.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/26 17:28
+ * IdaxApiException
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public class IdaxApiException extends RuntimeException {
 

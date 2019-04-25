@@ -5,11 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 /**
- * Order or trade report update event.
- *
+ * @author : zhuWei (ynzhuwei888@126.com)
+ * Order or trade report update event. *
  * This event is embedded as part of a user data update event.
- *
- * @see UserDataUpdateEvent
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data

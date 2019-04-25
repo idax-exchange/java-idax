@@ -7,11 +7,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
- * @author Admin
- * @Title: MyOrderEvent
- * @ProjectName idax-java-api
- * @Description: TODO
- * @date 2018/12/518:39
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data

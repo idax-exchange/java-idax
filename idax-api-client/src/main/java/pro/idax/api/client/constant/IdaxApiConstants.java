@@ -4,10 +4,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 
 /**
- * @program: IdaxApiConstants
- * @description: Constants used throughout idax's API.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public class IdaxApiConstants {
 

@@ -16,7 +16,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.idax.api.client</groupId>
+            <groupId>pro.idax.api.client</groupId>
             <artifactId>idax-api-client</artifactId>
             <version>1.0.0</version>
         </dependency>

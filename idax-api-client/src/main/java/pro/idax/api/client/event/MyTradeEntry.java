@@ -6,10 +6,7 @@ import lombok.Data;
 import pro.idax.api.client.entry.BaseEntry;
 
 /**
- * @program: MyTradeEntry
- * @description: MyTradeEntry
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/4 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data

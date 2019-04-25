@@ -1,10 +1,7 @@
 package pro.idax.api.client.enums;
 
 /**
- * @program: EventTypeEnum
- * @description: EventTypeEnum
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/04 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public enum EventTypeEnum {
 
@@ -22,8 +19,8 @@ public enum EventTypeEnum {
 
     /**
      * EventTypeEnum
-     * @param code
-     * @param desc
+     * @param code code
+     * @param desc desc
      */
     EventTypeEnum(String code, String desc) {
         this.code = code;

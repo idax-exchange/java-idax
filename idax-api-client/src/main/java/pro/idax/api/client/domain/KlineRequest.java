@@ -5,10 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @program: KLineRequest
- * @description: KLineRequest
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/26 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @Data
 public class KlineRequest implements Serializable {

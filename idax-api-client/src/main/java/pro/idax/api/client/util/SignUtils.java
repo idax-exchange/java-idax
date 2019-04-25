@@ -7,10 +7,7 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
- * @program: SignUtils
- * @description: SignUtils
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @Slf4j
 public class SignUtils {
@@ -18,8 +15,8 @@ public class SignUtils {
     /**
      * sha256_HMAC
      *
-     * @param message
-     * @param secret
+     * @param message message
+     * @param secret  secret
      * @return String
      */
     public static String hmacSha256(String message, String secret) {
@@ -43,7 +40,7 @@ public class SignUtils {
     /**
      * Converting an encrypted byte array to a string
      *
-     * @param b
+     * @param b b
      * @return String
      */
     private static String byteArrayToHexString(byte[] b) {

@@ -1,10 +1,7 @@
 package pro.idax.api.client.enums;
 
 /**
- * @program: IdaxCodeEnum
- * @description: IdaxCodeEnum
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/01 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public enum IdaxCodeEnum {
 
@@ -72,8 +69,8 @@ public enum IdaxCodeEnum {
 
     /**
      * IdaxCodeEnum
-     * @param code
-     * @param desc
+     * @param code code
+     * @param desc desc
      */
     IdaxCodeEnum(Integer code, String desc) {
         this.code = code;

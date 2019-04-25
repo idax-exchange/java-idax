@@ -8,17 +8,14 @@ import pro.idax.api.client.exception.IdaxApiException;
 
 
 /**
- * @program: CheckParamValidUtil
- * @description: CheckParamValidUtil
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public class CheckParamValidUtil {
 
     /**
      * checkParamValidGetOrderInfo
      *
-     * @param orderInfoRequest
+     * @param orderInfoRequest orderInfoRequest
      */
     public static void checkParamValidGetOrderInfo(OrderInfoRequest orderInfoRequest) {
         if (StringUtils.isEmpty(orderInfoRequest.getKey())) {
@@ -38,7 +35,7 @@ public class CheckParamValidUtil {
     /**
      * checkParamValidGetOrderHistory
      *
-     * @param orderHistoryRequest
+     * @param orderHistoryRequest orderHistoryRequest
      */
     public static void checkParamValidGetOrderHistory(OrderHistoryRequest orderHistoryRequest) {
         if (StringUtils.isEmpty(orderHistoryRequest.getKey())) {
@@ -64,7 +61,7 @@ public class CheckParamValidUtil {
     /**
      * checkParamValidGetUserInfo
      *
-     * @param userInfoRequest
+     * @param userInfoRequest userInfoRequest
      */
     public static void checkParamValidGetUserInfo(UserInfoRequest userInfoRequest) {
         if (StringUtils.isEmpty(userInfoRequest.getKey())) {
@@ -78,7 +75,7 @@ public class CheckParamValidUtil {
     /**
      * checkParamValidGetTradeHistory
      *
-     * @param tradeHistoryRequest
+     * @param tradeHistoryRequest tradeHistoryRequest
      */
     public static void checkParamValidGetTradeHistory(TradeHistoryRequest tradeHistoryRequest) {
         if (StringUtils.isEmpty(tradeHistoryRequest.getKey())) {
@@ -98,7 +95,7 @@ public class CheckParamValidUtil {
     /**
      * checkParamValidPlaceOrder
      *
-     * @param placeOrderRequest
+     * @param placeOrderRequest placeOrderRequest
      */
     public static void checkParamValidPlaceOrder(PlaceOrderRequest placeOrderRequest) {
         if (StringUtils.isEmpty(placeOrderRequest.getKey())) {
@@ -127,7 +124,7 @@ public class CheckParamValidUtil {
     /**
      * checkParamValidCancelOrder
      *
-     * @param cancelOrderRequest
+     * @param cancelOrderRequest cancelOrderRequest
      */
     public static void checkParamValidCancelOrder(CancelOrderRequest cancelOrderRequest) {
         if (StringUtils.isEmpty(cancelOrderRequest.getKey())) {
@@ -142,7 +139,7 @@ public class CheckParamValidUtil {
     /**
      * checkParamValidGetOrderList
      *
-     * @param orderListRequest
+     * @param orderListRequest orderListRequest
      */
     public static void checkParamValidGetOrderList(OrderListRequest orderListRequest) {
         if (StringUtils.isEmpty(orderListRequest.getKey())) {

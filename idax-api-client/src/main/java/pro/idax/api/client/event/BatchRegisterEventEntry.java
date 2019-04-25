@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 /**
+ * @author : zhuWei (ynzhuwei888@126.com)
  * batch register delta event for a symbol.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)

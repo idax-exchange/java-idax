@@ -4,10 +4,7 @@ import pro.idax.api.client.domain.*;
 import pro.idax.api.client.entry.*;
 
 /**
- * @program: IdaxApiRestClientImpl
- * @description: Implementation of Idax's REST API using Retrofit with synchronous/blocking method calls.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/25 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public interface IdaxApiRestClient {
 
@@ -32,7 +29,7 @@ public interface IdaxApiRestClient {
     /**
      * Get kline of a param.
      *
-     * @param kLineReuest
+     * @param kLineReuest kLineReuest
      * @return KlineEntry
      */
     KlineEntry getKlineEntry(KlineRequest kLineReuest);
@@ -61,27 +58,17 @@ public interface IdaxApiRestClient {
     PairLimitEntry getPairLimitEntry(String symbol);
 
     /**
-     * get Order List
-     *This interface is obsoleted
-     * @param orderListRequest
-     * @return OrderListEntry
-     * @link com.idax.api.client.domain.order.OrderListRequest
-     */
-//    OrderListEntry getOrderList(OrderListRequest orderListRequest);
-
-    /**
      * get order info
      *
-     * @param orderInfoRequest
+     * @param orderInfoRequest orderInfoRequest
      * @return OrderInfoEntry
-     * @link com.idax.api.client.domain.order.OrderInfoRequest
      */
     OrderInfoEntry getOrderInfo(OrderInfoRequest orderInfoRequest);
 
     /**
      * get order history of { OrderHistoryRequest}
      *
-     * @param orderHistoryRequest
+     * @param orderHistoryRequest orderHistoryRequest
      * @return OrderHistoryEntry
      */
     OrderHistoryEntry getOrderHistory(OrderHistoryRequest orderHistoryRequest);
@@ -89,24 +76,16 @@ public interface IdaxApiRestClient {
     /**
      * get user info of { UserInfoRequest}
      *
-     * @param userInfoRequest
+     * @param userInfoRequest userInfoRequest
      * @return UserInfoEntry
      */
     UserInfoEntry getUserInfo(UserInfoRequest userInfoRequest);
 
 
     /**
-     * get trade history of { TradeHistoryRequest}
-     *This interface is obsoleted
-     * @param tradeHistoryRequest
-     * @return TradeHistoryEntry
-     */
-//    TradeHistoryEntry getTradeHistory(TradeHistoryRequest tradeHistoryRequest);
-
-    /**
      * getMyTrades
      *
-     * @param myTradesRequest
+     * @param myTradesRequest myTradesRequest
      * @return MyTradesEntry
      */
     MyTradesEntry getMyTrades(MyTradesRequest myTradesRequest);
@@ -114,7 +93,7 @@ public interface IdaxApiRestClient {
     /**
      * order place in Idax of { PlaceOrderRequest}
      *
-     * @param placeOrderRequest
+     * @param placeOrderRequest placeOrderRequest
      * @return PlaceOrderEntry
      */
     PlaceOrderEntry placeOrder(PlaceOrderRequest placeOrderRequest);
@@ -123,7 +102,7 @@ public interface IdaxApiRestClient {
     /**
      * cancel order in Idax of{@link CancelOrderRequest}
      *
-     * @param cancelOrderRequest
+     * @param cancelOrderRequest cancelOrderRequest
      * @return CancelOrderEntry
      */
     CancelOrderEntry cancelOrder(CancelOrderRequest cancelOrderRequest);

@@ -7,10 +7,7 @@ import java.io.Serializable;
 
 
 /**
- * @program: OrderListRequest
- * @description: order list request
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/02/26 17:28
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data

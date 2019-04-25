@@ -12,10 +12,7 @@ import java.io.IOException;
 
 
 /**
- * @program: IdaxApiWebSocketListener
- * @description: Idax API WebSocket listener.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/4 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 public class IdaxApiWebSocketListener<T> extends WebSocketListener {
 
@@ -29,8 +26,9 @@ public class IdaxApiWebSocketListener<T> extends WebSocketListener {
 
     /**
      * IdaxApiWebSocketListener
-     * @param callback
-     * @param eventClass
+     *
+     * @param callback   callback
+     * @param eventClass eventClass
      */
     public IdaxApiWebSocketListener(IdaxApiCallback<T> callback, Class<T> eventClass) {
         this.callback = callback;
@@ -39,8 +37,9 @@ public class IdaxApiWebSocketListener<T> extends WebSocketListener {
 
     /**
      * IdaxApiWebSocketListener
-     * @param callback
-     * @param eventTypeReference
+     *
+     * @param callback           callback
+     * @param eventTypeReference eventTypeReference
      */
     public IdaxApiWebSocketListener(IdaxApiCallback<T> callback, TypeReference<T> eventTypeReference) {
         this.callback = callback;
@@ -51,8 +50,8 @@ public class IdaxApiWebSocketListener<T> extends WebSocketListener {
     /**
      * onOpen
      *
-     * @param webSocket
-     * @param response
+     * @param webSocket webSocket
+     * @param response  response
      */
     @Override
     public void onOpen(WebSocket webSocket, Response response) {
@@ -62,8 +61,8 @@ public class IdaxApiWebSocketListener<T> extends WebSocketListener {
     /**
      * onMessage
      *
-     * @param webSocket
-     * @param text
+     * @param webSocket webSocket
+     * @param text      text
      */
     @Override
     public void onMessage(WebSocket webSocket, String text) {
@@ -84,9 +83,9 @@ public class IdaxApiWebSocketListener<T> extends WebSocketListener {
     /**
      * onClosing
      *
-     * @param webSocket
-     * @param code
-     * @param reason
+     * @param webSocket webSocket
+     * @param code      code
+     * @param reason    reason
      */
     @Override
     public void onClosing(final WebSocket webSocket, final int code, final String reason) {
@@ -96,14 +95,14 @@ public class IdaxApiWebSocketListener<T> extends WebSocketListener {
     /**
      * onFailure
      *
-     * @param webSocket
-     * @param t
-     * @param response
+     * @param webSocket webSocket
+     * @param throwable throwable
+     * @param response  response
      */
     @Override
-    public void onFailure(WebSocket webSocket, Throwable t, Response response) {
+    public void onFailure(WebSocket webSocket, Throwable throwable, Response response) {
         if (!closing) {
-            callback.onFailure(t);
+            callback.onFailure(throwable);
         }
     }
 }

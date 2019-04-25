@@ -6,11 +6,7 @@ import java.io.Serializable;
 import java.util.Map;
 
 /**
- * @author Admin
- * @Title: SendMessage
- * @ProjectName idax-java-api
- * @Description: TODO
- * @date 2018/12/514:05
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @Data
 public class SendMessage implements Serializable {

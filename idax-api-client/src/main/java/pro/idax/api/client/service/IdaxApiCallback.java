@@ -1,10 +1,7 @@
 package pro.idax.api.client.service;
 
 /**
- * @program: IdaxApiCallback
- * @description: IdaxApiCallback is a functional interface used together with the IdaxApiAsyncClient to provide a non-blocking REST client.
- * @author: zhuWei (ynzhuwei888@126.com)
- * @create: 2019/03/4 17:10
+ * @author : zhuWei (ynzhuwei888@126.com)
  */
 @FunctionalInterface
 public interface IdaxApiCallback<T> {
