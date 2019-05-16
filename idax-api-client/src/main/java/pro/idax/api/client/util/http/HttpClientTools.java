@@ -108,8 +108,7 @@ public class HttpClientTools {
         return str;
     }
 
-
-    /**setGetParams
+   /**setGetParams
      * Get request, only key-value pair parameters
      * @param url url
      * @param paramsMap paramsMap
@@ -120,12 +119,13 @@ public class HttpClientTools {
         if(paramsMap != null){
             stringBuilderUrl.append("?");
             for (Object key: paramsMap.keySet()){
-                stringBuilderUrl.append(url + key+"="+paramsMap.get(key)+"&");
+                stringBuilderUrl.append(key + "=" + paramsMap.get(key) + "&");
             }
-            stringBuilderUrl.append(stringBuilderUrl.substring(0,url.length()-1));
+            return stringBuilderUrl.substring(0, stringBuilderUrl.length() - 1);
         }
         return stringBuilderUrl.toString();
     }
+
 
     /**
      * convertStreamToString
