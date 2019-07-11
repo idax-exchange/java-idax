@@ -25,12 +25,12 @@ public class IdaxConfig {
     /**
      * IDAX REST OPEN API BASE URL.
      */
-    public static final String API_BASE_URL = "https://qa-openapi.idax.mn";
+    public static final String API_BASE_URL = "https://openapi.idax.pro";
 
     /**
      * IDAX WS OPEN API BASE URL.
      */
-    public static final String WS_API_BASE_URL = "wss://qa-openws.idax.mn/ws";
+    public static final String WS_API_BASE_URL = "wss://openws.idax.pro/ws";
 
     /**
      * init IdaxApiClientFactory
