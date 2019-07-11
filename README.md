@@ -28,7 +28,7 @@ There are three main client classes that can be used to interact with the API:
 1. [`idaxApiRestClient`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/pro/idax/api/client/service/IdaxApiRestClient.java), a synchronous/blocking [idax API](https://github.com/idax-exchange/java-idax/blob/master/README.md#java-idax-api) client;
 2. [`idaxApiWebSocketClient`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/pro/idax/api/client/service/IdaxApiWebSocketClient.java), a data streaming client using [idax WebSocket API](https://github.com/idax-exchange/java-idax/blob/master/README.md#websocket-api).
 
-These can be instantiated through the corresponding factory method of [`idaxApiClientFactory`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/pro/idax/api/client/IdaxApiClientFactory.java), by passing the [security parameters](https://www.idax.com/restapipub.html#user-content-endpoint-security-type) `API-KEY` and `SECRET`, which can be created at [https://www.idax.com/userCenter/createApi.html](https://www.idax.com/userCenter/createApi.html).
+These can be instantiated through the corresponding factory method of [`idaxApiClientFactory`](https://github.com/idax-exchange/java-idax/blob/master/idax-api-client/src/main/java/pro/idax/api/client/IdaxApiClientFactory.java), by passing the [security parameters](https://www.idax.com/restapipub.html#user-content-endpoint-security-type) `API-KEY` and `SECRET`, which can be created at [https://www.idax.com/userCenter/createApi.html].
 
 ```java
 idaxApiClientFactory factory = idaxApiClientFactory.newInstance("API-KEY", "SECRET");
